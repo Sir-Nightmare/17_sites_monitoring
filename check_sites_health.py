@@ -55,5 +55,5 @@ if __name__ == '__main__':
         else:
             expiration_date = 'No info'
         print('{0:40s}{4:3}{1:3s}{4:3}{2:10s}{4:3}{3:14s} |'.format(url, is_responding,
-                                                                   str(expiration_date), is_paid,
-                                                                   ' | '))
+                                                                    str(expiration_date), is_paid,
+                                                                    ' | '))
