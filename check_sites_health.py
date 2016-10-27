@@ -31,16 +31,15 @@ def is_domain_paid_month_ahead(expiration_date):
     return expiration_date - datetime.today().date() >= timedelta(days=PAID_DAYS_CHECK)
 
 
-
 def print_table_header():
-    print('{0:40s}{4:3}{1:9s}{4:3}{2:14s}{4:3}{3:20s}{4:3}'.format('Site url', 'resp. 200',
-                                                                   'Dom. exp. date',
-                                                                   'paid for month ahead', ' | '))
-    print('-' * 94)
+    print('{0:40s}{4:3}{1:3s}{4:2}{2:10s}{4:3}{3:14s} |'.format('Site url', '200', 'd.exp.date',
+                                                                'paid for month', ' | '))
+    print('-' * 78)
 
 
 if __name__ == '__main__':
-    url_file_path = sys.argv[1]
+    # url_file_path = sys.argv[1]
+    url_file_path = 'urls.txt'
     url_list = load_urls4check(url_file_path)
     print_table_header()
     for url in url_list:
@@ -56,5 +55,6 @@ if __name__ == '__main__':
                 is_paid = 'Yes'
         else:
             expiration_date = 'No info'
-        print('{0:40s}{4:3}{1:9s}{4:3}{2:14s}{4:3}{3:20s}{4:3}'.format(url, is_responding,
-                                                                       str(expiration_date), is_paid, ' | '))
+        print('{0:40s}{4:3}{1:3s}{4:3}{2:10s}{4:3}{3:14s} |'.format(url, is_responding,
+                                                                   str(expiration_date), is_paid,
+                                                                   ' | '))
