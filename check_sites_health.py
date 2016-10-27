@@ -38,8 +38,7 @@ def print_table_header():
 
 
 if __name__ == '__main__':
-    # url_file_path = sys.argv[1]
-    url_file_path = 'urls.txt'
+    url_file_path = sys.argv[1]
     url_list = load_urls4check(url_file_path)
     print_table_header()
     for url in url_list:
